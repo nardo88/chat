@@ -1,8 +1,16 @@
 import React from 'react';
 
-
-const ChatItem = ({item}) => {
-    const {name, message, date} = item
+/**
+ * 
+ * @param {Object} item Через пропсы передаем элемент массива - объект 
+ * @returns 
+ * 
+ */
+const ChatItem = ({ item }) => {
+    /**
+     * с помощью диструктуризации получаем значения ключей объекта
+     */
+    const { name, message, date } = item
     return (
         <li className="chat-item">
             <div className="chat-item__top">

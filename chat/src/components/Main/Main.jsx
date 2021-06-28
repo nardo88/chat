@@ -1,6 +1,10 @@
 import React from 'react';
 import Chat from '../Chat/Chat';
 
+/**
+ * Компонент Main отрисовывает заголовок и компонент Chat
+ * @returns {JSX} jsx-код
+ */
 const Main = () => {
     return (
         <div className="main">
