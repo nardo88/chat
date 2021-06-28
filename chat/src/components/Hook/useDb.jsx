@@ -7,7 +7,6 @@ export const useDb = dataBase => {
 
     useEffect(() => {
         const dbRef = dataBase.ref('message/');
-
         
         dbRef.on('value', snapshot => {
             setDb(snapshot.val())

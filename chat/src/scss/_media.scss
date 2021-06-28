@@ -100,9 +100,11 @@
     }
 }
 
-@media (max-width: 575px) {}
 
 @media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
     .chat-item{
         padding: 5px 10px 15px 10px;
         &__name {
@@ -130,18 +132,26 @@
     }
 
     .chat{
+
+        height: calc(100vh - 115px);
+        display: flex;
+        flex-direction: column;
+
         &__list {
-            height: 45vh;
+            
             padding-right: 5px;
         }
         &__wrapper{
             margin-bottom: 10px;
+            height: auto;
+            flex-grow: 1;
         }
     }
 
     .form{
         &__btn{
             height: 30px;
+            margin-bottom: 20px;
         }
 
         &__input{
@@ -178,4 +188,8 @@
 }
 
 
-@media (max-width: 320px) {}
+@media (max-width: 320px) {
+    .chat {
+        height: calc(100vh - 145px);
+    }
+}

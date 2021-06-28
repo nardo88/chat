@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import ChatItem from './ChatItem'
 import Context from '../Context/Context';
 import { getArray } from '../Functions/getArray'
@@ -39,10 +39,17 @@ const Chat = () => {
 
     const { db, dataBase } = useContext(Context);
 
+    const list = React.createRef()
+    useEffect(() => {
+        const chat = list.current
+        chat.parentElement.scrollTo({top: chat.clientHeight })
+
+    }, [db])
+
     return (
         <div className="chat">
             <div className="chat__wrapper">
-                <ul className="chat__list">
+                <ul ref={list} className="chat__list">
 
                     {
                         db ? getArray(db).map(item => <ChatItem key={item.id} item={item} />)
