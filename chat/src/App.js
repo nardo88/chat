@@ -29,26 +29,6 @@ function App() {
 
   const db = useDb(dataBase)
 
-  const date = new Date()
-
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric'
-  };
-
-  console.log(date.toLocaleString("ru", options));
-
-
-
-  // dataBase.ref('message/').push().set({
-  //   name: 'Иван',
-  //   date: date.toLocaleString("ru", options),
-  //   message: 'some text',
-  // })
 
   
 
