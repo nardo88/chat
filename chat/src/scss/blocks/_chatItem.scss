@@ -21,6 +21,7 @@
 
     &__name {
         font-style: italic;
+        font-weight: bold;
     }
 
     &__date {
@@ -28,8 +29,6 @@
         opacity: .7;
 
     }
-
-    &__bottom {}
 
     &__text {
         max-width: 80%;

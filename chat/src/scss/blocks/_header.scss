@@ -94,3 +94,42 @@
         border: none;
     }
 }
+
+
+.burger{
+
+    display: none;
+
+    &__btn{
+        width: 22px;
+        height: 18px;
+        position: relative;
+        border: none;
+        background-color: #fff;
+
+        &:before{
+            content: '';
+            position: absolute;
+            display: block;
+            height: 2px;
+            background-color: #331C20;
+            width: 100%;
+            left: 0;
+            top: 60%;
+        }
+
+        &:after{
+            content: '';
+            position: absolute;
+            display: block;
+            height: 2px;
+            background-color: #331C20;
+            width: 65%;
+            left: 0;
+            top: 100%;
+        }
+
+    }
+
+    
+}

@@ -14,24 +14,26 @@ const Chat = () => {
     const addMessage = e => {
         e.preventDefault()
 
-        const date = new Date()
+        if (name && message) {
+            const date = new Date()
 
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric'
-        };
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
 
-        dataBase.ref('message/').push().set({
-          name: name,
-          date: date.toLocaleString("ru", options),
-          message: message,
-        })
+            dataBase.ref('message/').push().set({
+                name: name,
+                date: date.toLocaleString("ru", options),
+                message: message,
+            })
 
-        setMessage('')
+            setMessage('')
+        }
     }
 
 
@@ -53,7 +55,7 @@ const Chat = () => {
             </div>
             <div className="chat__control">
                 <form onSubmit={addMessage} className="chat__form form">
-                    <input type="text" className="form__input" placeholder="Ваше имя" value={name} onChange={changeName}/>
+                    <input type="text" className="form__input" placeholder="Ваше имя" value={name} onChange={changeName} />
                     <input type="text" className="form__input message" placeholder="Сообщение" value={message} onChange={changeMessage} />
                     <button className="form__btn">Отправить</button>
                 </form>

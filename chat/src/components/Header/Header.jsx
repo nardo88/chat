@@ -11,8 +11,12 @@ const Header = () => {
                         <div className="header__logo">
                             <img src={logo} alt="logo" />
                         </div>
+
                         <nav className="nav">
-                            <ul className="nav__list">
+                            <div className="burger">
+                                <button className="burger__btn burger__btn--active"></button>
+                            </div>
+                            <ul className="nav__list nav__list--mobile">
                                 <li className="nav__item">
                                     <a href="#!" className="nav__Link">Курсы</a>
                                 </li>
@@ -26,7 +30,7 @@ const Header = () => {
                     <div className="header__column">
                         <nav className="nav">
                             <ul className="nav__list">
-                                <li className="nav__item">
+                                <li className="nav__item nav__item--mobile">
                                     <a href="#!" className="nav__Link">Стать экспертом</a>
                                 </li>
                                 <li className="nav__item">
