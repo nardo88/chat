@@ -1,0 +1,38 @@
+.chat-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(51, 28, 32, .2);
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: 1px solid transparent;
+
+    }
+
+    padding: 5px 20px 15px 10px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+
+    &__name {
+        font-style: italic;
+    }
+
+    &__date {
+        font-style: italic;
+        opacity: .7;
+
+    }
+
+    &__bottom {}
+
+    &__text {
+        max-width: 80%;
+        color: rgba(51, 28, 32, .7);
+    }
+}

@@ -1,6 +1,10 @@
-import './App.css';
+import './scss/style.scss';
 import firebase  from 'firebase/app';
 import 'firebase/database';
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import {useDb} from './components/Hook/useDb'
+import Context from './components/Context/Context'
 
 function App() {
 
@@ -19,11 +23,44 @@ function App() {
     firebase.initializeApp(firebaseConfig);
 }
   
+ 
+  // создаем БД
+  const dataBase = firebase.database()
+
+  const db = useDb(dataBase)
+
+  const date = new Date()
+
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric'
+  };
+
+  console.log(date.toLocaleString("ru", options));
+
+
+
+  // dataBase.ref('message/').push().set({
+  //   name: 'Иван',
+  //   date: date.toLocaleString("ru", options),
+  //   message: 'some text',
+  // })
+
+  
+
 
   return (
+    <Context.Provider value={{db, dataBase}}>
     <div className="App">
-      чат
+      <Header />
+      <Main />
     </div>
+    </Context.Provider>
+
   );
 }
 
