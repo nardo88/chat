@@ -2,6 +2,9 @@ import React from 'react';
 import logo from '../../img/header/logo.svg';
 import user from '../../img/header/user.svg'
 
+/**
+ * Обыкновенная отрисовка шапки сайта
+ */
 const Header = () => {
     return (
         <header className="header">

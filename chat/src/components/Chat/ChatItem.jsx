@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * 
  * @param {Object} item Через пропсы передаем элемент массива - объект 
- * @returns 
+ * @returns возвращаем элемент списка "li" c заполненными данными из пропсов
  * 
  */
 const ChatItem = ({ item }) => {
